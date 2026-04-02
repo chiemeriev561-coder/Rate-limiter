@@ -32,10 +32,8 @@ pip install -r requirements.txt
 ```
 
 ## Run The API
-
-```bash
-uvicorn rate-limiter.main:app --reload
-```
+cd rate-limiter
+uvicorn main:app --reload
 
 If your shell has trouble importing from the `rate-limiter` directory name, run from inside that folder instead:
 
@@ -80,28 +78,6 @@ This endpoint is not rate-limited.
 
 The tests expect Redis to be available on `localhost:6379`.
 
-## Upload To GitHub
+ 
 
-1. Initialize git:
 
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-2. Create an empty GitHub repository.
-3. Connect the local folder to GitHub and push:
-
-```bash
-git remote add origin <your-repo-url>
-git branch -M main
-git push -u origin main
-```
-
-## Notes
-
-- Current rate-limit settings are defined in `rate-limiter/main.py` as:
-  - `LIMIT = 5`
-  - `WINDOW = 60`
-- Redis must be running before starting the API or tests.
